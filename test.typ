@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "style/tongjithesis.typ": *
 
 #show: doc => config(doc)
 
@@ -7,6 +7,15 @@
 在陣限特天糖京京金問調経展紙移。決運疑別請継車最速掲区時楽。分厳億理条回査亜席高練績作棄家。康記特皆報図測人温今戦象無止。声作住報高強講類感没線創。果写人伝作型島込得前利話革導強田挙大井設。昨僕必写米愛送著土近二著最仕終証責問誠。益謙高容掲離際海東記首加区型下通用請。体全匹再事濃川報近国写葬化。
 
 @test
+
+$ A = pi r^2 $ <testaf>
+$ "area" = pi dot "radius"^2 $
+$ cal(A) :=
+    { x in RR | x "is natural" } $
+#let x = 5
+$ #x < 17 $
+
+@testaf
 
 == 测试测试测试 <testa>
 
@@ -60,12 +69,13 @@ fn main() {
 }
 ```
 
+
 This has ``` `backticks` ``` in it
 (but the spaces are trimmed). And
 ``` here``` the leading space is
 also trimmed.
 
-
+#figure(
 ```py
 import random
 
@@ -78,3 +88,11 @@ max_value_in_list = 100
 random_list = generate_random_list(list_size, max_value_in_list)
 print("Randomly generated list:", random_list)
 ```
+,
+kind: "code",
+supplement: "代码",
+caption: "一个随机数生成器",  
+) <testcode>
+
+@testcode
+

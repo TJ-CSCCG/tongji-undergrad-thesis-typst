@@ -17,7 +17,9 @@
   "-7": 5pt,   // 小七
 )
 
+#let times-new-roman = "Times New Roman"
 #let normal-font = "TeX Gyre Termes"
+#let math-font = "TeX Gyre Termes Math"
 #let mono-font = "Fira Code"
 
 #let font-family = (
@@ -28,7 +30,12 @@
   xiaobiaosong: (normal-font, "FZXiaoBiaoSong-B05"),
   xihei: (normal-font, "FZXiHeiI-Z08"),
   code: (mono-font, "FZKai-Z03"),
+  math: (math-font, "FZKai-Z03"),
 )
+
+#let ii = math.class("normal", $mono(i)$)
+#let jj = math.class("normal", $mono(j)$)
+#let ee = math.class("normal", $mono(e)$)
 
 #let draw-binding() = {
   place("|", dx: -1.6cm, dy: 2.3cm)

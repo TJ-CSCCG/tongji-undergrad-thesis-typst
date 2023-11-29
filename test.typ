@@ -21,7 +21,7 @@ $ #x < 17 $
 
 在陣限特天糖京京金問調経展紙移。決運疑別請継車最速掲区時楽。分厳億理条回査亜席高練績作棄家。康記特皆報図測人温今戦象無止。声作住報高強講類感没線創。果写人伝作型島込得前利話革導強田挙大井設。昨僕必写米愛送著土近二著最仕終証責問誠。益謙高容掲離際海東記首加区型下通用請。体全匹再事濃川報近国写葬化。
 
-@testd
+@testd 近私企育戦品暮面福択前現改。語主接体意育別方上貢他社乳判剛界購。運暮用最門界士各右記碁掲初組。記織能危画績協業馬理断生岐図文箱推館生。析舞埼予購更細育盗方民稿発無大。子十版当文遺図合品問図治戦票果。
 
 === 测试测试测试 <testb>
 
@@ -53,7 +53,7 @@ $ #x < 17 $
 
 #underline[jjsjsjsjsj 体全匹再事濃川報近国写葬化]
 
-#underline[#emph[jjsjsjsjsj 体全匹再事濃川報近国写葬化]]
+#underline[#emph[jjsjsjsjsj 体全匹asda再dfdgf事濃gg川報近dfs国写葬fdaf化]]
 
 
 
@@ -94,5 +94,5 @@ supplement: "代码",
 caption: "一个随机数生成器",  
 ) <testcode>
 
-@testcode
+@testcode。So references after a figure should have an indent now.
 

@@ -72,3 +72,8 @@
   place("|", dx: -1.6cm, dy: 20.9cm)
   place("|", dx: -1.6cm, dy: 21.5cm)
 }
+
+#let empty_par() = {
+  v(-1.2em)
+  box()
+}

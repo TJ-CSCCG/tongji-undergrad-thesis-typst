@@ -77,15 +77,15 @@
       set align(center)
       set text(font:font-family.hei, size: font-size.at("4"), weight: "bold")
       it
-      par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
+      v(1em)
     } else if it.level == 2 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
       it
-      par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
+      v(1em)
     } else if it.level == 3 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
       it
-      par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
+      v(1em)
     } else if it.level == 4 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
       v(-0.5em)
@@ -94,8 +94,7 @@
         [],
         it,
       )
-      v(-0.7em)
-      par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
+      v(0.5em)
     } else if it.level == 5 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
       v(-0.5em)
@@ -104,10 +103,15 @@
         [],
         it,
       )
-      v(-0.7em)
-      par(leading: 1.5em)[#text(size:0.0em)[#h(0.0em)]]
+      v(0.5em)
     }
-  }
+  } + empty_par()
+
+  
+
+  show list: it => it + empty_par()
+  show enum: it => it + empty_par()
+  show figure: it => it + empty_par()
   
   doc
 }

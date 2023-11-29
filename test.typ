@@ -1,6 +1,6 @@
 #import "style/tongjithesis.typ": *
 
-#show: doc => config(doc)
+#show: doc => thesis(doc)
 
 = 测试测试测试 <test>
 

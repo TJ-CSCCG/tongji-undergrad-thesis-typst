@@ -43,8 +43,13 @@
 
 #let make_cover(cover) = align(center)[
   #image("../figures/tongji.svg", height: 2.25cm)
-  #text("TONGJI UNIVERSITY", font: font-family.hei, size: font-size.at("-2"), weight: "bold")
-    
+  #text(
+    "TONGJI UNIVERSITY",
+    font: font-family.hei,
+    size: font-size.at("-2"),
+    weight: "bold",
+  )
+
   #v(30pt)
   #text("本科毕业设计（论文）", font: font-family.hei, size: font-size.at("-0"))
   #v(60pt)
@@ -54,37 +59,36 @@
     columns: (5em, auto),
     gutter: 16pt,
     ..cover.enumerate().map(((idx, value)) => {
-    set text(size: font-size.at("-2"))
-    if calc.even(idx) {
-      let arr = value.clusters()
-      let k = (4 - arr.len()) / (arr.len() - 1)
-      arr.join([#h(1em * k)])
-    } else {
-      block(
-        width: 100%,
-        inset: 4pt,
-        stroke: (
-          bottom: 1pt + black
-        ),
-        align(center, value)
-      )
-    }
-  }))
-  #pagebreak()
+      set text(size: font-size.at("-2"))
+      if calc.even(idx) {
+        let arr = value.clusters()
+        let k = (4 - arr.len()) / (arr.len() - 1)
+        arr.join([#h(1em * k)])
+      } else {
+        block(
+          width: 100%,
+          inset: 4pt,
+          stroke: (bottom: 1pt + black),
+          align(center, value),
+        )
+      }
+    }),
+  )
 ]
 
-#let make_abstract(
-  title: "",
-  abstract: "",
-  keywords: (),
-  prompt: (),
-  is-english: false
-) = {
-  align(center)[
+#let make_abstract(title: "", abstract: "", keywords: (), prompt: (), is-english: false) = {
+  align(
+    center,
+  )[
     #v(0.5em)
     #text(font: font-family.hei, size: font-size.at("-2"), weight: "bold", title)
     #v(1em)
-    #text(font: font-family.hei, size: font-size.at("4"), weight: "bold", prompt.at(0))
+    #text(
+      font: font-family.hei,
+      size: font-size.at("4"),
+      weight: "bold",
+      prompt.at(0),
+    )
     #v(-0.5em)
   ]
   set par(first-line-indent: 2em)
@@ -99,12 +103,13 @@
   } else {
     text(font: font-family.song, keywords.join("，"))
   }
-
-  pagebreak()
 }
 
 #let make_outline() = {
   show outline: set align(center)
-  outline(title: "目录")
-  pagebreak()
+  outline(title: "目录", depth: 3)
+}
+
+#let make_bib(bib_dir: "../bib/note.bib") = {
+  bibliography(bib_dir, full: true, style: "gb-7714-2015-numeric")
 }

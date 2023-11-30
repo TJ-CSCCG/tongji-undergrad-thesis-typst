@@ -11,11 +11,13 @@
 $ A = pi r^2 $ <testaf>
 $ "area" = pi dot "radius"^2 $
 $ cal(A) :=
-    { x in RR | x "is natural" } $
+{ x in RR | x "is natural" } $
 #let x = 5
 $ #x < 17 $
 
 @testaf
+
+基于多种场景的#smallcaps("Typst")简要教程
 
 == 测试测试测试 <testa>
 
@@ -55,13 +57,9 @@ $ #x < 17 $
 
 #underline[#emph[jjsjsjsjsj 体全匹asda再dfdgf事濃gg川報近dfs国写葬fdaf化]]
 
+Adding `rbx` to `rcx` gives the desired result.
 
-
-Adding `rbx` to `rcx` gives
-the desired result.
-
-What is ```rust fn main()``` in Rust
-would be ```c int main()``` in C.
+What is ```rust fn main()``` in Rust would be ```c int main()``` in C.
 
 ```rust
 fn main() {
@@ -69,14 +67,10 @@ fn main() {
 }
 ```
 
+This has ``` `backticks` ``` in it (but the spaces are trimmed). And ``` here```
+the leading space is also trimmed.
 
-This has ``` `backticks` ``` in it
-(but the spaces are trimmed). And
-``` here``` the leading space is
-also trimmed.
-
-#figure(
-```py
+#figure(```py
 import random
 
 def generate_random_list(size, max_value):
@@ -87,12 +81,12 @@ max_value_in_list = 100
 
 random_list = generate_random_list(list_size, max_value_in_list)
 print("Randomly generated list:", random_list)
-```
-,
-kind: "code",
-supplement: "代码",
-caption: "一个随机数生成器",  
-) <testcode>
+```, kind: "code", supplement: "代码", caption: "一个随机数生成器") <testcode>
 
-@testcode。So references after a figure should have an indent now.
+@testcode。So references after a figure should have an indent now. 123
 
+#pagebreak()
+#make_bib()
+#pagebreak()
+
+#include "sections/acknowledgments.typ"

@@ -42,6 +42,7 @@
     "指导老师", teacher,
     "日期", date.display("[year]年[month]月[day]日"),
   ))
+  pagebreak()
 
   set par(justify: true, first-line-indent: 2em, leading: 0.9em)
   show par: set block(spacing: 0.9em)
@@ -97,6 +98,8 @@
         it,
       )
       v(0.5em)
+    } else {
+      it
     }
   } + empty_par()
 
@@ -135,6 +138,7 @@
     keywords: keywords,
     prompt: ("摘要", "关键词："),
   )
+  pagebreak()
 
   make_abstract(
     title: title_english,
@@ -143,8 +147,10 @@
     prompt: ("ABSTRACT", "Keywords: "),
     is-english: true,
   )
+  pagebreak()
 
   make_outline()
+  pagebreak()
 
   set page(
     footer: locate(loc => {

@@ -86,7 +86,7 @@ print("Randomly generated list:", random_list)
 @testcode。So references after a figure should have an indent now. 123
 
 #pagebreak()
-#make_bib()
+#make-bib()
 #pagebreak()
 
-#include "sections/acknowledgments.typ"
+#include "sections/acknowledgments.typ" 

@@ -12,4 +12,4 @@
   "bib/note.bib",
   title: "参考文献",
   full: false,
-  style: "gb-7114-2015-numeric")
+  style: "gb-7714-2015-numeric")

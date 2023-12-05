@@ -36,12 +36,12 @@
   place("|", dx: -1.6cm, dy: 21.5cm)
 }
 
-#let empty_par() = {
+#let empty-par() = {
   v(-1.2em)
   box()
 }
 
-#let make_cover(cover) = align(center)[
+#let make-cover(cover) = align(center)[
   #image("../figures/tongji.svg", height: 2.25cm)
   #text(
     "TONGJI UNIVERSITY",
@@ -76,40 +76,75 @@
   )
 ]
 
-#let make_abstract(title: "", abstract: "", keywords: (), prompt: (), is-english: false) = {
+#let make-abstract(title: "", abstract: "", keywords: (), prompt: (), is-english: false) = {
   align(
     center,
   )[
-    #v(0.5em)
-    #text(font: font-family.hei, size: font-size.at("-2"), weight: "bold", title)
     #v(1em)
-    #text(
-      font: font-family.hei,
-      size: font-size.at("4"),
-      weight: "bold",
-      prompt.at(0),
-    )
-    #v(-0.5em)
+    #text(font: font-family.hei, size: font-size.at("-2"), weight: "bold", title)
+    #v(1.5em)
   ]
+  heading(prompt.at(0), numbering: none, outlined: false)
+
   set par(first-line-indent: 2em)
-  v(0.5em)
-  text(font: font-family.song, abstract)
+  text(abstract)
 
   v(5mm)
   set par(first-line-indent: 0em)
   text(font: font-family.xiaobiaosong, weight: "bold", prompt.at(1))
-  if is-english {
-    text(font: font-family.song, keywords.join(", "))
+  let keywords-string = if is-english {
+    keywords.join(", ")
   } else {
-    text(font: font-family.song, keywords.join("，"))
+    keywords.join("，")
   }
+  text(keywords-string)
 }
 
-#let make_outline() = {
-  show outline: set align(center)
-  outline(title: "目录", depth: 3)
+#let make-outline(title: "目录", depth: 3, indent: true) = {
+  // outline(title: "目录", depth: 3)
+
+  heading(title, numbering: none, outlined: false)
+  set par(first-line-indent: 0pt, leading: 0.9em)
+  locate(it => {
+    let elements = query(heading.where(outlined: true), it)
+
+    for el in elements {
+      // Skip headings that are too deep
+      if depth != none and el.level > depth { continue }
+
+      let el_number = if el.numbering != none {
+        numbering(el.numbering, ..counter(heading).at(el.location()))
+        h(0.5em)
+      }
+
+      let line = {
+        if indent {
+          let indent-width = if el.level == 1 {
+            0pt
+          } else if el.level == 2 {
+            1em
+          } else if el.level == 3 {
+            4em
+          } else {
+            0pt
+          }
+
+          h(indent-width)
+        }
+
+        el_number
+        el.body
+        box(width: 1fr,  h(0.25em) + box(width: 1fr, repeat[·#h(1pt)]) + h(0.25em))
+        str(counter(page).at(el.location()).first())
+
+        linebreak()
+      }
+
+      link(el.location(), line)
+    }
+  })
 }
 
-#let make_bib(bib_dir: "../bib/note.bib") = {
+#let make-bib(bib_dir: "../bib/note.bib") = {
   bibliography(bib_dir, full: true, style: "gb-7714-2015-numeric")
 }

@@ -1,7 +1,7 @@
 #import "../style/elements.typ": *
 
 #heading("谢 辞", numbering: none)
-#empty_par()
+#empty-par()
 
 本节通常用于感谢在研究过程中给予帮助和支持的人们，例如指导老师、实验室同学、朋友和家人等。
 

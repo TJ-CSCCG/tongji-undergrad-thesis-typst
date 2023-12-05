@@ -32,7 +32,7 @@
   )
   set text(font-size.at("5"), font: font-family.song, lang: "zh", region: "cn")
 
-  make_cover((
+  make-cover((
     "课题名称", title,
     "副标题", subtitle,
     "学院", school,
@@ -71,15 +71,17 @@
       set align(center)
       set text(font:font-family.hei, size: font-size.at("4"), weight: "bold")
       it
-      v(1em)
+      v(1.5em)
     } else if it.level == 2 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
+      v(0.5em)
       it
-      v(1em)
+      v(1.5em)
     } else if it.level == 3 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
+      v(0.5em)
       it
-      v(1em)
+      v(1.5em)
     } else if it.level == 4 {
       set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
       v(-0.5em)
@@ -101,14 +103,14 @@
     } else {
       it
     }
-  } + empty_par()
+  } + empty-par()
 
   
 
-  show list: it => it + empty_par()
-  show enum: it => it + empty_par()
-  show figure: it => it + empty_par()
-  show math.equation: it => it + empty_par()
+  show list: it => it + empty-par()
+  show enum: it => it + empty-par()
+  show figure: it => it + empty-par()
+  show math.equation: it => it + empty-par()
 
   set page(
     numbering: "I",
@@ -129,10 +131,15 @@
       draw-binding()
     },
     header-ascent:20%,
+    footer: locate(loc => {
+        set align(center)
+        set text(font: font-family.song, size: font-size.at("-4"))
+        numbering("I", counter(page).at(loc).first())
+      }),
   )
   counter(page).update(1)
 
-  make_abstract(
+  make-abstract(
     title: title,
     abstract: abstract,
     keywords: keywords,
@@ -140,7 +147,7 @@
   )
   pagebreak()
 
-  make_abstract(
+  make-abstract(
     title: title_english,
     abstract: abstract_english,
     keywords: keywords_english,
@@ -149,21 +156,21 @@
   )
   pagebreak()
 
-  make_outline()
+  make-outline()
   pagebreak()
 
   set page(
     footer: locate(loc => {
         line(stroke: 1.8pt, length: 100%)
         set align(right)
-        set text(font: font-family.song, size: font-size.at("4"))
+        set text(font: font-family.song, size: font-size.at("-4"))
         v(-0.6em)
         [
           共#h(1em)
           #counter(page).final(loc).at(0)#h(1em)
           页#h(1em)
           第#h(1em)
-          #counter(page).at(loc).at(0)
+          #counter(page).display()
           #h(1em)页
         ]
       }),

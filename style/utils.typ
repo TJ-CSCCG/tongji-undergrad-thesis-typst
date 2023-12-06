@@ -36,3 +36,10 @@
 #let ii = math.class("normal", $mono(i)$)
 #let jj = math.class("normal", $mono(j)$)
 #let ee = math.class("normal", $mono(e)$)
+
+#let songti = font-family.song
+#let heiti = font-family.hei
+#let fangsong = font-family.fangsong
+#let kaiti = font-family.kai
+#let xiaobiaosong = font-family.xiaobiaosong
+#let xihei = font-family.xihei

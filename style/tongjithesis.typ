@@ -1,6 +1,8 @@
 #import "utils.typ": *
 #import "elements.typ": *
 
+#set pagebreak(weak: true)
+
 #let thesis(
   school: "某学院",
   major: "某专业",
@@ -16,127 +18,128 @@
   keywords: ("关键词1", "关键词2", "关键词3"),
   abstract_english: lorem(300),
   keywords_english: ("Keyword1", "keyword2", "keyword3"),
-  doc
+  doc,
 ) = {
-
   set document(author: id + " " + student, title: title)
   set page(
     paper: "a4",
-    margin: (
-      top: 4.2cm,
-      bottom: 2.7cm,
-      left: 3.3cm,
-      right: 1.8cm
-    ),
+    margin: (top: 4.2cm, bottom: 2.7cm, left: 3.3cm, right: 1.8cm),
     binding: left,
   )
   set text(font-size.at("5"), font: font-family.song, lang: "zh", region: "cn")
 
   make-cover((
-    "课题名称", title,
-    "副标题", subtitle,
-    "学院", school,
-    "专业", major,
-    "学生姓名", student,
-    "学号", id,
-    "指导老师", teacher,
-    "日期", date.display("[year]年[month]月[day]日"),
+    "课题名称",
+    title,
+    "副标题",
+    subtitle,
+    "学院",
+    school,
+    "专业",
+    major,
+    "学生姓名",
+    student,
+    "学号",
+    id,
+    "指导老师",
+    teacher,
+    "日期",
+    date.display("[year]年[month]月[day]日"),
   ))
   pagebreak()
 
   set par(justify: true, first-line-indent: 2em, leading: 0.9em)
   show par: set block(spacing: 0.9em)
-  set math.equation(numbering: "(1)")  // not implemented yet: (1.1)
+  set math.equation(numbering: "(1)") // not implemented yet: (1.1)
   show strong: it => text(font: font-family.hei, weight: "bold", it.body)
   show emph: it => text(font: font-family.kai, style: "italic", it.body)
   show raw: set text(font: font-family.code)
   show math.equation: set text(font: font-family.math)
-  show raw.where(block: true): block.with(
-    fill: luma(250),
-    inset: 10pt,
-    radius: 4pt,
-  )
-  set underline(offset: 3pt, stroke: 0.6pt)  // to make latin and CJK characters have the same underline offset
+  show raw.where(block: true): block.with(fill: luma(250), inset: 10pt, radius: 4pt)
+  set underline(offset: 3pt, stroke: 0.6pt) // to make latin and CJK characters have the same underline offset
+  set list(indent: 2em, spacing: 0.9em)
 
-  set heading(numbering: (..nums) => 
-                          if nums.pos().len() <= 3  {
-                            nums.pos().map(str).join(".") + "  "
-                          } else if nums.pos().len() == 4 {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".at(nums.pos().at(-1) - 1) + ". "
-                          } else if nums.pos().len() == 5 {"abcdefghijklmnopqrstuvwxyz".at(nums.pos().at(-1) - 1) + ". "
-                          }
-                        )
+  set heading(numbering: (..nums) =>
+  if nums.pos().len() <= 3 {
+    nums.pos().map(str).join(".")
+  } else if nums.pos().len() == 4 {
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ".at(nums.pos().at(-1) - 1) + ". "
+  } else if nums.pos().len() == 5 {
+    "abcdefghijklmnopqrstuvwxyz".at(nums.pos().at(-1) - 1) + ". "
+  })
 
-  show heading: it =>  {
+  show heading: it => locate(loc => {
     if it.level == 1 {
       set align(center)
-      set text(font:font-family.hei, size: font-size.at("4"), weight: "bold")
-      it
+      set text(font: font-family.hei, size: font-size.at("4"), weight: "bold")
+      if it.numbering != none {
+        numbering(it.numbering, ..counter(heading).at(loc))
+        h(1em)
+        it.body
+      } else {
+        it
+      }
       v(1.5em)
     } else if it.level == 2 {
-      set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
       v(0.5em)
-      it
-      v(1.5em)
+      if it.numbering != none {
+        numbering(it.numbering, ..counter(heading).at(loc))
+        h(1em)
+        it.body
+      } else {
+        it
+      }
+      v(1em)
     } else if it.level == 3 {
-      set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
       v(0.5em)
-      it
-      v(1.5em)
+      if it.numbering != none {
+        numbering(it.numbering, ..counter(heading).at(loc))
+        h(1em)
+        it.body
+      } else {
+        it
+      }
+      v(1em)
     } else if it.level == 4 {
-      set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
       v(-0.5em)
-      grid(
-        columns: (2em, 1fr),
-        [],
-        it,
-      )
+      grid(columns: (2em, 1fr), [], it)
       v(0.5em)
     } else if it.level == 5 {
-      set text(font:font-family.hei, size: font-size.at("5"), weight: "bold")
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
       v(-0.5em)
-      grid(
-        columns: (2em, 1fr),
-        [],
-        it,
-      )
+      grid(columns: (2em, 1fr), [], it)
       v(0.5em)
     } else {
       it
     }
-  } + empty-par()
+  }) + empty-par()
 
-  
-
-  show list: it => it + empty-par()
+   show list: it => it + empty-par()
   show enum: it => it + empty-par()
   show figure: it => it + empty-par()
+  show table: it => it + empty-par()
   show math.equation: it => it + empty-par()
 
-  set page(
-    numbering: "I",
-    header: {
-      set text(font: font-family.song, font-size.at("-4"))
-      grid(
-        columns: (0.5em, 1fr, auto, 0.5em),
-        [],
-        image("../figures/tongji.svg", height: 1cm),
-        block(
-          height: 0.7cm,
-          [#set align(right); 毕业设计（论文）]
-        ),
-        [],
-      )
-      v(-0.5em)
-      line(length: 100%, stroke: 1.8pt)
-      draw-binding()
-    },
-    header-ascent:20%,
-    footer: locate(loc => {
-        set align(center)
-        set text(font: font-family.song, size: font-size.at("-4"))
-        numbering("I", counter(page).at(loc).first())
-      }),
-  )
+  set page(numbering: "I", header: {
+    set text(font: font-family.song, font-size.at("-4"))
+    grid(
+      columns: (0.5em, 1fr, auto, 0.5em),
+      [],
+      image("../figures/tongji.svg", height: 1cm),
+      block(height: 0.7cm, [#set align(right); 毕业设计（论文）]),
+      [],
+    )
+    v(-0.5em)
+    line(length: 100%, stroke: 1.8pt)
+    draw-binding()
+  }, header-ascent: 20%, footer: locate(loc => {
+    set align(center)
+    set text(font: font-family.song, size: font-size.at("-4"))
+    numbering("I", counter(page).at(loc).first())
+  }))
   counter(page).update(1)
 
   make-abstract(
@@ -159,23 +162,21 @@
   make-outline()
   pagebreak()
 
-  set page(
-    footer: locate(loc => {
-        line(stroke: 1.8pt, length: 100%)
-        set align(right)
-        set text(font: font-family.song, size: font-size.at("-4"))
-        v(-0.6em)
-        [
-          共#h(1em)
-          #counter(page).final(loc).at(0)#h(1em)
-          页#h(1em)
-          第#h(1em)
-          #counter(page).display()
-          #h(1em)页
-        ]
-      }),
-  )
+  set page(footer: locate(loc => {
+    line(stroke: 1.8pt, length: 100%)
+    set align(right)
+    set text(font: font-family.song, size: font-size.at("-4"))
+    v(-0.6em)
+    [
+      共#h(1em)
+      #counter(page).final(loc).at(0)#h(1em)
+      页#h(1em)
+      第#h(1em)
+      #counter(page).display()
+      #h(1em)页
+    ]
+  }))
   counter(page).update(1)
-  
+
   doc
 }

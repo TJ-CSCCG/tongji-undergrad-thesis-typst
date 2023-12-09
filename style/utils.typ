@@ -29,7 +29,7 @@
   kai: (normal-font, "FZKai-Z03"),
   xiaobiaosong: (normal-font, "FZXiaoBiaoSong-B05"),
   xihei: (normal-font, "FZXiHeiI-Z08"),
-  code: (mono-font, "FZKai-Z03"),
+  code: (mono-font, "FZFangSong-Z02"),
   math: (math-font, "FZKai-Z03"),
 )
 
@@ -43,3 +43,13 @@
 #let kaiti = font-family.kai
 #let xiaobiaosong = font-family.xiaobiaosong
 #let xihei = font-family.xihei
+
+#let LaTeX = {
+  [L];box(move(dx: -4.2pt, dy: -1.2pt, box(scale(65%)[A])));box(move(dx: -5.7pt, dy: 0pt, [T]));box(move(dx: -7.0pt, dy: 2.7pt, box(scale(100%)[E])));box(move(dx: -8.0pt, dy: 0pt, [X]));h(-8.0pt)
+}
+
+#let TeX = {
+  [T];box(move(dx: -1.3pt, dy: 2.7pt, box(scale(100%)[E])));box(move(dx: -2.3pt, dy: 0pt, [X]));h(-2.3pt)
+}
+
+#set pagebreak(weak: true)

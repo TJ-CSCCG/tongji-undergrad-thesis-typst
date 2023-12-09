@@ -1,4 +1,5 @@
 #import "utils.typ": *
+#import "@preview/tablex:0.0.6": tablex, cellx
 
 #let draw-binding() = {
   place("|", dx: -1.6cm, dy: 2.3cm)
@@ -102,49 +103,51 @@
 
 #let make-outline(title: "目录", depth: 3, indent: true) = {
   // outline(title: "目录", depth: 3)
-
   heading(title, numbering: none, outlined: false)
   set par(first-line-indent: 0pt, leading: 0.9em)
-  locate(it => {
-    let elements = query(heading.where(outlined: true), it)
+  locate(
+    it => {
+      let elements = query(heading.where(outlined: true), it)
 
-    for el in elements {
-      // Skip headings that are too deep
-      if depth != none and el.level > depth { continue }
+      for el in elements {
+        // Skip headings that are too deep
+        if depth != none and el.level > depth { continue }
 
-      let el_number = if el.numbering != none {
-        numbering(el.numbering, ..counter(heading).at(el.location()))
-        h(0.5em)
-      }
-
-      let line = {
-        if indent {
-          let indent-width = if el.level == 1 {
-            0pt
-          } else if el.level == 2 {
-            1em
-          } else if el.level == 3 {
-            4em
-          } else {
-            0pt
-          }
-
-          h(indent-width)
+        let el_number = if el.numbering != none {
+          numbering(el.numbering, ..counter(heading).at(el.location()))
+          h(0.5em)
         }
 
-        el_number
-        el.body
-        box(width: 1fr,  h(0.25em) + box(width: 1fr, repeat[·#h(1pt)]) + h(0.25em))
-        str(counter(page).at(el.location()).first())
+        let line = {
+          if indent {
+            let indent-width = if el.level == 1 {
+              0pt
+            } else if el.level == 2 {
+              1em
+            } else if el.level == 3 {
+              4em
+            } else {
+              0pt
+            }
 
-        linebreak()
+            h(indent-width)
+          }
+
+          el_number
+          el.body
+          box(width: 1fr, h(0.25em) + box(width: 1fr, repeat[·#h(1pt)]) + h(0.25em))
+          str(counter(page).at(el.location()).first())
+
+          linebreak()
+        }
+
+        link(el.location(), line)
       }
-
-      link(el.location(), line)
-    }
-  })
+    },
+  )
 }
 
 #let make-bib(bib_dir: "../bib/note.bib") = {
   bibliography(bib_dir, full: true, style: "gb-7714-2015-numeric")
 }
+

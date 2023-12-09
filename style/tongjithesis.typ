@@ -50,7 +50,7 @@
 
   set par(justify: true, first-line-indent: 2em, leading: 0.9em)
   show par: set block(spacing: 0.9em)
-  set math.equation(numbering: "(1)") // not implemented yet: (1.1)
+  set math.equation(numbering: none) // not implemented yet: (1.1)
   show strong: it => text(font: font-family.hei, weight: "bold", it.body)
   show emph: it => text(font: font-family.kai, style: "italic", it.body)
   show raw: set text(font: font-family.code)
@@ -119,10 +119,15 @@
 
   show list: it => it + empty-par()
   show enum: it => it + empty-par()
-  show figure: it => it + empty-par()
+  show figure: it => v(0.5em) + it + v(0.5em) + empty-par()
+  show figure: set block(breakable: true)
   show table: it => it + empty-par()
   show math.equation.where(block: true): it => it + empty-par()
   show raw.where(block: true): it => it + empty-par()
+
+  show heading: i-figured.reset-counters
+  show figure: i-figured.show-figure
+  show math.equation.where(block: true): i-figured.show-equation
 
   set page(numbering: "I", header: {
     set text(font: font-family.song, font-size.at("-4"))

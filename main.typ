@@ -12,7 +12,11 @@
   subtitle: [基于多种场景的Typst简要教程],
   title_english: "Thesis Template",
   subtitle_english: "with Various Scenes",
-  date: datetime(year: 2023, month: 12, day: 9),
+  date: datetime(
+    year: datetime.today().year(),
+    month: datetime.today().month(),
+    day: datetime.today().day(),
+  ),
   abstract: [
     摘要通常是一篇文章、论文、报告或其他文本的简短概括。它的目的是帮助读者了解文本的主要内容和结论，以便决定是否需要继续阅读原文。摘要通常包含文本的主题、目的、方法、结果和结论等方面的信息，并尽可能简洁明了地呈现。好的摘要应该能够概括文本的重点，同时避免使用不必要的细节和专业术语，以便广大读者能够轻松理解。
 
@@ -58,6 +62,12 @@
 #pagebreak()
 
 #include "sections/03_reference.typ"
+#pagebreak()
+
+#include "sections/04_figure.typ"
+#pagebreak()
+
+#include "sections/05_conclusion.typ"
 #pagebreak()
 
 #make-bib()

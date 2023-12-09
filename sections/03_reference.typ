@@ -1,3 +1,5 @@
+#import "../style/elements.typ": *
+
 = 引用 <reference>
 
 在本节（@reference）中，我们将探讨如何在 Typst 中进行参考文献引用和交叉引用，以便于读者查阅文献和方便地引用文档中的其他部分。

@@ -1,5 +1,6 @@
 #import "utils.typ": *
-#import "@preview/tablex:0.0.6": tablex, cellx
+#import "@preview/i-figured:0.2.2"
+#import "@preview/tablex:0.0.6": tablex, hlinex, vlinex, colspanx, rowspanx
 
 #let draw-binding() = {
   place("|", dx: -1.6cm, dy: 2.3cm)
@@ -150,4 +151,3 @@
 #let make-bib(bib_dir: "../bib/note.bib", full: false) = {
   bibliography(bib_dir, full: full, style: "gb-7714-2015-numeric")
 }
-

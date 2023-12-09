@@ -117,11 +117,12 @@
     }
   }) + empty-par()
 
-   show list: it => it + empty-par()
+  show list: it => it + empty-par()
   show enum: it => it + empty-par()
   show figure: it => it + empty-par()
   show table: it => it + empty-par()
-  show math.equation: it => it + empty-par()
+  show math.equation.where(block: true): it => it + empty-par()
+  show raw.where(block: true): it => it + empty-par()
 
   set page(numbering: "I", header: {
     set text(font: font-family.song, font-size.at("-4"))

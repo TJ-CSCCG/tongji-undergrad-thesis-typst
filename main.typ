@@ -54,7 +54,13 @@
 #include "sections/01_intro.typ"
 #pagebreak()
 
+#include "sections/02_math.typ"
+#pagebreak()
+
+#include "sections/03_reference.typ"
+#pagebreak()
+
 #make-bib()
 #pagebreak()
 
-#include "sections/acknowledgments.typ" 
+#include "sections/acknowledgments.typ"

@@ -106,22 +106,17 @@ In Typst, *bold*, _italic_ and `monospace` are supported.
   ],
 )
 
-此外，Typst 还支持使用 #raw("#set text(font: <somefonthere>)", lang: "typ") 函数来自定义字体。在本模板中，我们预置了方正字库中的以下字体，并设置了相应的别名供使用：
-
-- #[#set text(font: font-family.song);宋体]：#raw("font-family.song", lang: "typ") 或 #raw("songti", lang: "typ")
-- #[#set text(font: font-family.hei);黑体]：#raw("font-family.hei", lang: "typ") 或 #raw("heiti", lang: "typ")
-- #[#set text(font: font-family.kai);楷体]：#raw("font-family.kai", lang: "typ") 或 #raw("kaiti", lang: "typ")
-- #[#set text(font: font-family.fangsong);仿宋]：#raw("font-family.fangsong", lang: "typ") 或 #raw("fangsong", lang: "typ")
-- #[#set text(font: font-family.xiaobiaosong);小标宋]：#raw("font-family.xiaobiaosong", lang: "typ") 或 #raw("xiaobiaosong", lang: "typ")
-- #[#set text(font: font-family.xihei);细黑]：#raw("font-family.xihei", lang: "typ") 或 #raw("xihei", lang: "typ")
-
-下面，我们用示例文字来展示这些字体的效果。
+此外，Typst 还支持使用 #raw("#[#set text(font: <some_font>); <some_text>]", lang: "typ") 命令来自定义字体。在本模板中，我们预置了方正字库中的以下字体，并设置了相应的别名供使用。
 
 #table(
-  columns: (auto, 1fr),
+  columns: (auto, auto, 1fr),
   [
     #set align(center)
     #strong[字体]
+  ],
+  [
+    #set align(center)
+    #strong[别名]
   ],
   [
     #set align(center)
@@ -133,15 +128,26 @@ In Typst, *bold*, _italic_ and `monospace` are supported.
     宋体
   ],
   [
+    #set align(center)
+    #raw("font-family.song", lang: "typ")\
+    或\ 
+    #raw("songti", lang: "typ")
+  ],
+  [
     #set text(font: font-family.song)
-    #h(2em)1900年前后，由埃里希 · 宝隆创办的 “同济医院” 正式挂牌。医院的医师大都是 “德医公会”
-    成员。他们白天忙于经营自己的诊所，只有傍晚到医院看门诊、动手术。埃里希 ·
+    #h(2em)1900年前后，由埃里希 · 宝隆创办的 “同济医院” 正式挂牌。埃里希 ·
     宝隆医生看到医院里的医疗力量不足，计划在院内设立一所德文医学堂，招收中国学生，以培养施诊医生。
   ],
   [
     #set align(center)
     #set text(font: font-family.hei)
     黑体
+  ],
+  [
+    #set align(center)
+    #raw("font-family.hei", lang: "typ")\ 
+    或\ 
+    #raw("heiti", lang: "typ")
   ],
   [
     #set text(font: font-family.hei)
@@ -154,14 +160,26 @@ In Typst, *bold*, _italic_ and `monospace` are supported.
     楷体
   ],
   [
+    #set align(center)
+    #raw("font-family.kai", lang: "typ")\ 
+    或\ 
+    #raw("kaiti", lang: "typ")
+  ],
+  [
     #set text(font: font-family.kai)
     #h(2em)1907年6月医学堂开学前，德国驻沪总领事克纳佩在上海不仅号召德国商人捐款，而且要求德国洋行向中国商人募捐。同时，费舍尔还要求中国官方的资助和支持，克纳佩利用在中德两国募来的捐款，成立了
-    “为中国人办的德国医学堂基金会”。当时规定，捐款金额较多者可成为医学堂董事会董事。医学堂建立时定名为德文医学堂，并成立了董事会负责学校的管理。
+    “为中国人办的德国医学堂基金会”。
   ],
   [
     #set align(center)
     #set text(font: font-family.fangsong)
     仿宋
+  ],
+  [
+    #set align(center)
+    #raw("font-family.fangsong", lang: "typ")\ 
+    或\ 
+    #raw("fangsong", lang: "typ")
   ],
   [
     #set text(font: font-family.fangsong)
@@ -174,6 +192,12 @@ In Typst, *bold*, _italic_ and `monospace` are supported.
     小标宋
   ],
   [
+    #set align(center)
+    #raw("font-family.xiaobiaosong", lang: "typ")\ 
+    或\ 
+    #raw("xiaobiaosong", lang: "typ")
+  ],
+  [
     #set text(font: font-family.xiaobiaosong)
     #h(2em)埃里希 ·
     宝隆医生被正式推选为董事会总监督（董事长）兼学堂首任总理（校长），负责学堂的管理。医学堂的校址设在同济医院对面的白克路（今凤阳路415号上海长征医院内）。1907年10月1日德文医学堂举行了开学典礼。
@@ -182,6 +206,12 @@ In Typst, *bold*, _italic_ and `monospace` are supported.
     #set align(center)
     #set text(font: font-family.xihei)
     细黑
+  ],
+  [
+    #set align(center)
+    #raw("font-family.xihei", lang: "typ")\ 
+    或\ 
+    #raw("xihei", lang: "typ")
   ],
   [
     #set text(font: font-family.xihei)
@@ -205,6 +235,6 @@ In Typst, *bold*, _italic_ and `monospace` are supported.
   #underline[中Lorem文ipsum中dolor文]
 ])
 
-== 生僻字支持
+=== 生僻字支持
 
 由于本模板使用的是方正字库GBK字体，一般情况下，我们可以直接使用生僻字#footnote[此处的生僻字指：GBK编码中有，但GB2312编码中没有的字。]。例如：丂丄丅丆丏丒丗丟丠両丣並丩丮丯丱丳丵丷丼乀乁乂乄乆乊乑乕乗乚乛乢乣乤乥乧乨乪乫乬乭乮乯。

@@ -147,7 +147,7 @@
   )
 }
 
-#let make-bib(bib_dir: "../bib/note.bib") = {
-  bibliography(bib_dir, full: true, style: "gb-7714-2015-numeric")
+#let make-bib(bib_dir: "../bib/note.bib", full: false) = {
+  bibliography(bib_dir, full: full, style: "gb-7714-2015-numeric")
 }
 

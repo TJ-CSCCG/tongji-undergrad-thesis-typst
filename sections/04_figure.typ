@@ -12,14 +12,14 @@
 
 #figure(
   ```typ
-        #figure(
-          <content>,
-          <placement>,
-          <caption>,
-          <kind>,
-          <supplement>,
-        )
-        ```,
+                #figure(
+                  <content>,
+                  <placement>,
+                  <caption>,
+                  <kind>,
+                  <supplement>,
+                )
+                ```,
   caption: [Typst的#raw("#figure()", lang: "typ") 参数列表],
   placement: none,
   kind: "raw",
@@ -123,3 +123,99 @@
 == 表格
 
 表格是论文中常见的浮动体，它可以是简单的表格，也可以是复杂的表格。编排表格时应简单明了、表达一致，内容明晰易懂，表文呼应，内容一致。在Typst中，表格以 #raw("#table()", lang: "typ") 的形式实现。
+
+== 算法
+
+在偏向于计算机科学的论文中，算法是常见的浮动体；常以伪代码的形式出现。我们引入了 `algorithmic` 宏包，以实现伪代码的排版。在Typst中，算法以 #raw("#algorithm()", lang: "typ") 的形式实现。
+同样地，我们需要把 #raw("#algorithm()", lang: "typ") 作为 #raw("#figure()", lang: "typ") 的
+`content` 参数。
+
+#table(columns: (1fr, 1fr), [
+  #set align(center)
+  #strong[代码]
+], [
+  #set align(center)
+  #strong[渲染结果]
+], ```typ
+#figure(algo(
+  title: [
+    #set text(size: 15pt)
+    #emph(smallcaps("Fib")) ],
+  parameters: ([#math.italic("n")],),
+  comment-prefix: [#sym.triangle.stroked.r ],
+  comment-styles: (fill: rgb(100%, 0%, 50%)),
+  indent-size: 15pt,
+  indent-guides: 1pt + gray,
+  inset: 5pt,
+  fill: luma(250),
+)[
+  if $n < 0$:#i\
+  return null#d\
+  if $n = 0$ or $n = 1$:#i\
+  return $n$#d\
+  \
+  let $x <- 0$\
+  let $y <- 1$\
+  for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
+  let $z <- x+y$\
+  let $x <- y$\
+  let $y <- z$#d\
+  \
+  return $x+y$
+], caption: [计算斐波那契数列], kind: "algo", supplement: "算法") <fib>
+```, [
+  #figure(algo(
+    title: [ // note that title and parameters
+      #set text(size: 15pt) // can be content
+      #emph(smallcaps("Fib")) ],
+    parameters: ([#math.italic("n")],),
+    comment-prefix: [#sym.triangle.stroked.r ],
+    comment-styles: (fill: rgb(100%, 0%, 50%)),
+    indent-size: 15pt,
+    indent-guides: 1pt + gray,
+    inset: 5pt,
+    fill: luma(250),
+  )[
+    if $n < 0$:#i\
+    return null#d\
+    if $n = 0$ or $n = 1$:#i\
+    return $n$#d\
+    \
+    let $x <- 0$\
+    let $y <- 1$\
+    for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
+    let $z <- x+y$\
+    let $x <- y$\
+    let $y <- z$#d\
+    \
+    return $x+y$
+  ], caption: [计算斐波那契数列], kind: "algo", supplement: "算法") <fib>
+])
+
+== 代码
+
+我们也可以把代码作为浮动体，以便于在论文中展示代码。在Typst中，代码作为 #raw("#figure()", lang: "typ") 的
+`content` 参数，以构建浮动体。
+
+#figure(```python
+def fibonacci(n: int) -> int:
+    """
+    Calculates the nth Fibonacci number.
+
+    Args:
+        n (int): Index of the desired Fibonacci number. Must be non-negative.
+
+    Returns:
+        int: The nth Fibonacci number.
+
+    Raises:
+        ValueError: If the input is negative.
+    """
+    if n < 0:
+        raise ValueError("Negative arguments are not supported")
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+```, caption: [计算斐波那契数列的Python实现], kind: "raw", supplement: "代码") <fibpy>

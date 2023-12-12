@@ -84,6 +84,7 @@
       set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
       v(0.5em)
       if it.numbering != none {
+        h(-2em)
         numbering(it.numbering, ..counter(heading).at(loc))
         h(1em)
         it.body
@@ -126,8 +127,9 @@
   show raw.where(block: true): it => it + empty-par()
 
   show heading: i-figured.reset-counters.with(extra-kinds: ("algo",))
-  show figure: i-figured.show-figure
+  show figure: i-figured.show-figure.with(extra-prefixes: (algo: "algo:"))
   show math.equation.where(block: true): i-figured.show-equation
+  show figure.where(kind: table): set figure.caption(position: top)
 
   set page(numbering: "I", header: {
     set text(font: font-family.song, font-size.at("-4"))

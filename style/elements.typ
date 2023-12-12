@@ -1,6 +1,6 @@
 #import "utils.typ": *
 #import "@preview/i-figured:0.2.2"
-#import "@preview/tablex:0.0.6": tablex, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/tablex:0.0.6": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
 #import "@preview/algo:0.3.3": algo, i, d, comment, code
 
 #let draw-binding() = {
@@ -151,4 +151,24 @@
 
 #let make-bib(bib_dir: "../bib/note.bib", full: false) = {
   bibliography(bib_dir, full: full, style: "gb-7714-2015-numeric")
+}
+
+#let heavyrulewidth = .08em
+#let lightrulewidth = .05em
+#let cmidrulewidth = .03em
+
+#let toprule(stroke: heavyrulewidth) = {
+  hlinex(stroke: stroke)
+}
+
+#let midrule(stroke: lightrulewidth) = {
+  hlinex(stroke: stroke)
+}
+
+#let bottomrule(stroke: heavyrulewidth) = {
+  hlinex(stroke: stroke)
+}
+
+#let cmidrule(start: 0, end: -1, stroke: cmidrulewidth) = {
+  hlinex(start: start, end: end, stroke: stroke)
 }

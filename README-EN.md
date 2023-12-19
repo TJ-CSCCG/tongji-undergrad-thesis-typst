@@ -1,11 +1,11 @@
 
 # :page_facing_up: Tongji University Undergraduate Thesis Typst Template (STEM)
 
-Chinese | [English](README-EN.md)
+[中文](README.md) | English
 
 ## Sample Display
 
-Below are displayed in order the "Cover", "Chinese Abstract", "Table of Contents", "Main Content", "References", and "Acknowledgements".
+Below are displayed in order the "Cover", "Chinese Abstract", "Table of Contents", "Main Content", "References", and "Acknowledgments".
 
 <p align="center">
       <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0001.jpg" width="30%">
@@ -64,14 +64,14 @@ We are very grateful to the above contributors for their efforts, which have pro
 
 When using this template, if you find this project helpful for your graduation project or thesis, we hope you can express your thanks and respect in your acknowledgments section.
 
-## Special Thanks
+## Acknowledgments for Open Source Projects
 
 We have learned a lot from the excellent open-source projects of top universities:
 
 * [lucifer1004/pkuthss-typst](https://github.com/lucifer1004/pkuthss-typst)
 * [werifu/HUST-typst-template](https://github.com/werifu/HUST-typst-template)
 
-## Contact Information
+## Contact
 
 ```python
 # Python

@@ -135,15 +135,16 @@
             h(indent-width)
           }
 
-          el_number
-          el.body
+          link(el.location(), el_number)
+          link(el.location(), el.body)
           box(width: 1fr, h(0.25em) + box(width: 1fr, repeat[·#h(1pt)]) + h(0.25em))
-          str(counter(page).at(el.location()).first())
+          link(el.location(),str(counter(page).at(el.location()).first()))
 
           linebreak()
         }
 
-        link(el.location(), line)
+        // link(el.location(), line)
+        line
       }
     },
   )

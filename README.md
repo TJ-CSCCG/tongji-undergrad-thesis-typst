@@ -78,3 +78,7 @@ typst --font-path fonts compile main.typ
     'rizhonglin@$.edu.%'.replace('$', 'tongji').replace('%', 'cn'),
 ]
 ```
+
+### QQ 群
+
+* TJ-CSCCG 交流群：`1013806782`

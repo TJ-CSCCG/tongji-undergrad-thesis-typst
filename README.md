@@ -2,6 +2,11 @@
 
 中文 | [English](README-EN.md)
 
+> [!CAUTION]
+> 由于 Typst 项目仍处于密集发展阶段，且对某些功能的支持不完善，因此本模板可能存在一些问题。如果您在使用过程中遇到了问题，欢迎提交 issue 或 PR，我们会尽力解决。
+>
+> 在此期间，欢迎大家使用[我们的 $\LaTeX$ 模板](https://github.com/TJ-CSCCG/tongji-undergrad-thesis)。
+
 ## 样例展示
 
 以下依次展示 “封面”、“中文摘要”、“目录”、“主要内容”、“参考文献” 与 “谢辞”。
@@ -35,8 +40,11 @@ cd tongji-undergrad-thesis-typst
 按照需求修改相关文件，然后执行以下命令以编译。
 
 ```bash
-typst --font-path fonts compile main.typ
+typst --font-path ./fonts compile main.typ
 ```
+
+> [!TIP]
+> 若您发现字体无法正常显示，请将 `fonts` 文件夹中的字体文件安装到系统中，再执行编译命令。
 
 ### 在线编译
 
@@ -57,7 +65,7 @@ typst --font-path fonts compile main.typ
 ## 有关突出贡献的说明
 
 * 该项目起源于 [FeO3](https://github.com/seashell11234455) 的初始版本项目 [tongji-undergrad-thesis-typst](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/lky)。
-* 后来 [tobiasforest](https://github.com/tobiasforest) 对模板进行了完善，使其更加符合同济大学本科生毕业设计论文的要求，并增加了针对 Typst 的基础教程。
+* 后来 [RizhongLin](https://github.com/RizhongLin) 对模板进行了完善，使其更加符合同济大学本科生毕业设计论文的要求，并增加了针对 Typst 的基础教程。
 
 我们非常感谢以上贡献者的付出，他们的工作为更多同学提供了方便和帮助。
 
@@ -75,7 +83,7 @@ typst --font-path fonts compile main.typ
 ```python
 # Python
 [
-    'rizhonglin@$.edu.%'.replace('$', 'tongji').replace('%', 'cn'),
+    'rizhonglin@$.%'.replace('$', 'epfl').replace('%', 'ch'),
 ]
 ```
 

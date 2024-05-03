@@ -3,6 +3,11 @@
 
 [中文](README.md) | English
 
+> [!CAUTION]
+> Since the Typst project is still in the development stage and support for some features is not perfect, there may be some issues with this template. If you encounter problems while using it, please feel free to submit an issue or PR and we will try our best to solve it.
+>
+> In the mean time, we also welcome you to use [our $\LaTeX$ template](https://github.com/TJ-CSCCG/tongji-undergrad-thesis).
+
 ## Sample Display
 
 Below are displayed in order the "Cover", "Chinese Abstract", "Table of Contents", "Main Content", "References", and "Acknowledgments".
@@ -36,8 +41,11 @@ cd tongji-undergrad-thesis-typst
 Modify related files as needed, then execute the following command to compile.
 
 ```bash
-typst --font-path fonts compile main.typ
+typst --font-path ./fonts compile main.typ
 ```
+
+> [!TIP]
+> If you find that the fonts are not displayed properly, please install the font files in the `fonts` folder to your system and then execute the compile command.
 
 ### Online Compilation
 
@@ -58,7 +66,7 @@ This project uses fonts from the FounderType font library, with copyright belong
 ## Acknowledgments for Outstanding Contributions
 
 * This project originated from [FeO3](https://github.com/seashell11234455)'s initial version project [tongji-undergrad-thesis-typst](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/lky).
-* Later, [tobiasforest](https://github.com/tobiasforest) improved the template to better meet the requirements of Tongji University undergraduate thesis, and added basic tutorials for Typst.
+* Later, [RizhongLin](https://github.com/RizhongLin) improved the template to better meet the requirements of Tongji University undergraduate thesis, and added basic tutorials for Typst.
 
 We are very grateful to the above contributors for their efforts, which have provided convenience and help to more students.
 
@@ -76,6 +84,6 @@ We have learned a lot from the excellent open-source projects of top universitie
 ```python
 # Python
 [
-    'rizhonglin@$.edu.%'.replace('$', 'tongji').replace('%', 'cn'),
+    'rizhonglin@$.%'.replace('$', 'epfl').replace('%', 'ch'),
 ]
 ```

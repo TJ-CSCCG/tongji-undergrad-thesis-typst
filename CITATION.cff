@@ -4,6 +4,7 @@ title: "Tongji University Undergraduate Thesis Template (STEM) Typst"
 authors:
   - family-names: Lin
     given-names: Rizhong
+    orcid: https://orcid.org/0009-0000-1468-6734
   - family-names: Liu
     given-names: Kongyang
 url: https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst

@@ -1,92 +1,37 @@
-# :page_facing_up: 同济大学本科生毕业设计论文 Typst 模板（理工类）
+# 📄 同济大学本科生毕业设计 Typst 论文模板（理工类）
 
-中文 | [English](README-EN.md)
+## 简介
 
-> [!CAUTION]
-> 由于 Typst 项目仍处于密集发展阶段，且对某些功能的支持不完善，因此本模板可能存在一些问题。如果您在使用过程中遇到了问题，欢迎提交 issue 或 PR，我们会尽力解决。
->
-> 在此期间，欢迎大家使用[我们的 $\LaTeX$ 模板](https://github.com/TJ-CSCCG/tongji-undergrad-thesis)。
+这是同济大学本科生毕业设计论文模板（理工类）仓库的 `fonts` 分支，存放着模板所需的字体文件。
 
-## 样例展示
+## 安装方式
 
-以下依次展示 “封面”、“中文摘要”、“目录”、“主要内容”、“参考文献” 与 “谢辞”。
+1. 下载本仓库的 `fonts` 分支到本地。
+2. 安装字体文件：
+   - Windows 用户：双击字体文件，点击 “安装” 按钮。
+   - macOS 用户：双击字体文件，点击 “安装字体” 按钮。
+   - Linux 用户：将字体文件复制到 `~/.local/share/fonts/` 目录下，然后运行 `fc-cache -f -v` 命令。
 
-<p align="center">
-      <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0001.jpg" width="30%">
-      <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0002.jpg" width="30%">
-      <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0004.jpg" width="30%">
-      <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0005.jpg" width="30%">
-      <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0019.jpg" width="30%">
-      <img src="https://media.githubusercontent.com/media/TJ-CSCCG/TJCS-Images/tongji-undergrad-thesis-typst/preview/main_page-0020.jpg" width="30%">
-</p>
+## 免责声明
 
-## 使用方法
+本仓库的字体文件仅供学习目的使用。
+请遵守相关法律法规，不要将字体文件用于商业用途或非法用途。作者不对因使用本字体文件而产生的任何问题负责。
 
-### 本地编译
+# 📄 Tongji University Undergraduate Thesis Template (STEM) in Typst
 
-#### 1. 安装 Typst
+## Introduction
 
-参照 [Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) 官方文档安装 Typst。
+This is the `fonts` branch of the repository for the Tongji University undergraduate thesis template ("the Template"), which contains the font files required by the Template.
 
-#### 2. clone 本项目
+## Installation
 
-```bash
-git clone https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git
-cd tongji-undergrad-thesis-typst
-```
+1. Download the `fonts` branch of this repository to your local machine.
+2. Install the font files:
+   - For Windows users: Double-click the font files and click the "Install" button.
+   - For macOS users: Double-click the font files and click the "Install Font" button.
+   - For Linux users: Copy the font files to the `~/.local/share/fonts/` directory, then run the `fc-cache -f -v` command.
 
-#### 3. 编译
+## Disclaimer
 
-按照需求修改相关文件，然后执行以下命令以编译。
-
-```bash
-typst --font-path ./fonts compile main.typ
-```
-
-> [!TIP]
-> 若您发现字体无法正常显示，请将 `fonts` 文件夹中的字体文件安装到系统中，再执行编译命令。
-
-### 在线编译
-
-在 [Typst App](https://typst.app) 上使用本模板进行在线编译。
-
-## 如何为该项目贡献代码？
-
-还请查看 [How to pull request](CONTRIBUTING.md/#how-to-pull-request)。
-
-## 开源协议
-
-该项目使用 [MIT License](LICENSE) 开源协议。
-
-### 免责声明
-
-本项目使用了方正字库中的字体，版权归方正字库所有。本项目仅用于学习交流，不得用于商业用途。
-
-## 有关突出贡献的说明
-
-* 该项目起源于 [FeO3](https://github.com/seashell11234455) 的初始版本项目 [tongji-undergrad-thesis-typst](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/lky)。
-* 后来 [RizhongLin](https://github.com/RizhongLin) 对模板进行了完善，使其更加符合同济大学本科生毕业设计论文的要求，并增加了针对 Typst 的基础教程。
-
-我们非常感谢以上贡献者的付出，他们的工作为更多同学提供了方便和帮助。
-
-在使用本模板时，如果您觉得本项目对您的毕业设计或论文有所帮助，我们希望您可以在您的致谢部分感谢并致以敬意。
-
-## 致谢
-
-我们从顶尖高校的优秀开源项目中学到了很多：
-
-* [lucifer1004/pkuthss-typst](https://github.com/lucifer1004/pkuthss-typst)
-* [werifu/HUST-typst-template](https://github.com/werifu/HUST-typst-template)
-
-## 联系方式
-
-```python
-# Python
-[
-    'rizhonglin@$.%'.replace('$', 'epfl').replace('%', 'ch'),
-]
-```
-
-### QQ 群
-
-* TJ-CSCCG 交流群：`1013806782`
+The font files in this repository are for learning purposes only. 
+Please comply with relevant laws and regulations and do not use the font files for commercial or illegal purposes. The author is not responsible for any issues arising from the use of these font files.

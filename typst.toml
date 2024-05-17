@@ -2,15 +2,15 @@
 name = "tongji-undergrad-thesis-typst"
 version = "0.1.0"
 entrypoint = "main.typ"
-authors = ["TJ-CSCCG"]
+authors = ["TJ-CSCCG <https://github.com/TJ-CSCCG>"]
 license = "MIT"
-description = "同济论文模板。Tongji University Thesis."
+description = "同济大学本科生毕业设计论文模板 | Tongji University Undergraduate Thesis Template"
 repository = "https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git"
-keywords = ["Tongji University", "thesis"]
+keywords = ["Tongji University", "thesis", "undergraduate"]
 categories = ["thesis"]
-exclude = ["imgs"]
+exclude = []
 
 [template]
 path = "./"
 entrypoint = "main.typ"
-thumbnail = "./cover.png"
+thumbnail = "thumbnail.webp"

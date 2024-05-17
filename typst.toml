@@ -1,0 +1,16 @@
+[package]
+name = "tongji-undergrad-thesis-typst"
+version = "0.1.0"
+entrypoint = "main.typ"
+authors = ["TJ-CSCCG"]
+license = "MIT"
+description = "同济论文模板。Tongji University Thesis."
+repository = "https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git"
+keywords = ["Tongji University", "thesis"]
+categories = ["thesis"]
+exclude = ["imgs"]
+
+[template]
+path = "./"
+entrypoint = "main.typ"
+thumbnail = "./figures/tongji.svg"

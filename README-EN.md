@@ -36,7 +36,11 @@ git clone https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git
 cd tongji-undergrad-thesis-typst
 ```
 
-#### 3. Compile
+#### 3. Download Fonts
+
+Please download the font files from the [`fonts`](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts) branch of this repository and place them in the `fonts` folder, or install the font files to your system.
+
+#### 4. Compile
 
 Modify related files as needed, then execute the following command to compile.
 

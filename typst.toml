@@ -13,4 +13,4 @@ exclude = ["imgs"]
 [template]
 path = "./"
 entrypoint = "main.typ"
-thumbnail = "./figures/tongji.svg"
+thumbnail = "./cover.png"

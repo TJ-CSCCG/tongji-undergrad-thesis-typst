@@ -1,4 +1,4 @@
-#import "../style/elements.typ": *
+#import "../../tongji-undergrad-thesis/elements.typ": *
 
 = 总结与未来工作展望
 

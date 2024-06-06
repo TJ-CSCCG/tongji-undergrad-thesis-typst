@@ -45,7 +45,7 @@
 }
 
 #let make-cover(cover) = align(center)[
-  #image("../figures/tongji.svg", height: 2.25cm)
+  #image("figures/tongji.svg", height: 2.25cm)
   #text(
     "TONGJI UNIVERSITY",
     font: font-family.hei,
@@ -148,10 +148,6 @@
       }
     },
   )
-}
-
-#let make-bib(bib_dir: "../bib/note.bib", full: false) = {
-  bibliography(bib_dir, full: full, style: "gb-7714-2015-numeric")
 }
 
 #let heavyrulewidth = .08em

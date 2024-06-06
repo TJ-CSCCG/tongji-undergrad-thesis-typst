@@ -1,4 +1,4 @@
-#import "../style/elements.typ": *
+#import "@preview/tongji-undergrad-thesis:0.1.1": *
 
 = 引用 <reference>
 

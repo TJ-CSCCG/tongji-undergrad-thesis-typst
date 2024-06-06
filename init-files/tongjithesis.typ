@@ -1,5 +1,4 @@
-#import "utils.typ": *
-#import "elements.typ": *
+#import "../tongji-undergrad-thesis/elements.typ": *
 
 #set pagebreak(weak: true)
 
@@ -136,7 +135,7 @@
     grid(
       columns: (0.5em, 1fr, auto, 0.5em),
       [],
-      image("../figures/tongji.svg", height: 1cm),
+      image("figures/tongji.svg", height: 1cm),
       block(height: 0.7cm, [#set align(right); 毕业设计（论文）]),
       [],
     )
@@ -187,4 +186,8 @@
   counter(page).update(1)
 
   doc
+}
+
+#let make-bib(bib_dir: "bib/note.bib", full: false) = {
+  bibliography(bib_dir, full: full, style: "gb-7714-2015-numeric")
 }

@@ -1,4 +1,4 @@
-#import "style/tongjithesis.typ": *
+#import "./tongjithesis.typ": *
 
 #set pagebreak(weak: true)
 

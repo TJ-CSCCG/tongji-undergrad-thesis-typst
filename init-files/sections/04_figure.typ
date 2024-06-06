@@ -1,4 +1,6 @@
-#import "@preview/tongji-undergrad-thesis:0.1.1": *
+#import "../../tongji-undergrad-thesis/elements.typ": *
+
+#let example-image = "../figures/example-image.svg"
 
 = 浮动体 <float>
 

@@ -35,7 +35,11 @@ git clone https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git
 cd tongji-undergrad-thesis-typst
 ```
 
-#### 3. 编译
+#### 3. 下载字体
+
+请到本仓库的 [`fonts`](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts) 分支下载字体文件，并将其放置在 `fonts` 文件夹中，或者将字体文件安装到系统中。
+
+#### 4. 编译
 
 按照需求修改相关文件，然后执行以下命令以编译。
 

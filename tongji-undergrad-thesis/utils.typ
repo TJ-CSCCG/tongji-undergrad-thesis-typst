@@ -53,5 +53,3 @@
 }
 
 #set pagebreak(weak: true)
-
-#let example-image = "../figures/example-image.svg"

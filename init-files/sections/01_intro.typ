@@ -1,4 +1,4 @@
-#import "../style/elements.typ": *
+#import "../../tongji-undergrad-thesis/elements.typ": *
 
 = 基本功能介绍 <introduction>
 

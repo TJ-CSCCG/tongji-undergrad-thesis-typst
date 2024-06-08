@@ -23,7 +23,40 @@ Below are displayed in order the "Cover", "Chinese Abstract", "Table of Contents
 
 ## How to Use
 
-### Local Compilation
+### Online Web App
+
+Please open [https://typst.app/universe/package/tongji-undergrad-thesis](https://typst.app/universe/package/tongji-undergrad-thesis) and click `Create project in app` , or choose `Start from a template`in the Web App, and choose `tongji-undergrad-thesis`.
+
+And then, please upload **all** fonts from [https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts) to the root directory of the project in the Web App.
+
+### Local - With typst init
+
+#### 1. Install Typst
+
+Refer to the [Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) official documentation for installation.
+
+#### 2. Init the project from the template
+
+```bash
+typst init @preview/tongji-undergrad-thesis
+```
+
+#### 3. Download Fonts
+
+Please download the font files from the [`fonts`](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts) branch of this repository and install the font files to your system.
+
+#### 4. Compile
+
+Modify related files as needed, then execute the following command to compile.
+
+```bash
+typst compile main.typ
+```
+
+> [!TIP]
+> If you find that the fonts are not displayed properly, please install the fonts to your system and then execute the compile command.
+
+### Local - With git clone
 
 #### 1. Install Typst
 
@@ -42,18 +75,14 @@ Please download the font files from the [`fonts`](https://github.com/TJ-CSCCG/to
 
 #### 4. Compile
 
-Modify related files as needed, then execute the following command to compile.
+Modify related files in `init-files` as needed, then execute the following command to compile.
 
 ```bash
-typst --font-path ./fonts compile main.typ
+typst --font-path ./fonts compile init-files/main.typ --root .
 ```
 
 > [!TIP]
 > If you find that the fonts are not displayed properly, please install the font files in the `fonts` folder to your system and then execute the compile command.
-
-### Online Compilation
-
-Use this template for online compilation at [Typst App](https://typst.app).
 
 ## How to Contribute to This Project?
 

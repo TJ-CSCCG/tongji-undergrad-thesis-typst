@@ -1,7 +1,7 @@
 [package]
-name = "tongji-undergrad-thesis"
+name = "paddling-tongji-thesis"
 version = "0.1.1"
-entrypoint = "tongji-undergrad-thesis/elements.typ"
+entrypoint = "paddling-tongji-thesis/elements.typ"
 authors = ["TJ-CSCCG <https://github.com/TJ-CSCCG>"]
 license = "MIT"
 description = "同济大学本科生毕业设计论文模板 | Tongji University Undergraduate Thesis Template"

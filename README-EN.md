@@ -25,7 +25,7 @@ Below are displayed in order the "Cover", "Chinese Abstract", "Table of Contents
 
 ### Online Web App
 
-Please open [https://typst.app/universe/package/tongji-undergrad-thesis](https://typst.app/universe/package/tongji-undergrad-thesis) and click `Create project in app` , or choose `Start from a template`in the Web App, and choose `tongji-undergrad-thesis`.
+Please open [https://typst.app/universe/package/paddling-tongji-thesis](https://typst.app/universe/package/paddling-tongji-thesis) and click `Create project in app` , or choose `Start from a template`in the Web App, and choose `paddling-tongji-thesis`.
 
 And then, please upload **all** fonts from [https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts) to the root directory of the project in the Web App.
 
@@ -38,7 +38,7 @@ Refer to the [Typst](https://github.com/typst/typst?tab=readme-ov-file#installat
 #### 2. Init the project from the template
 
 ```bash
-typst init @preview/tongji-undergrad-thesis
+typst init @preview/paddling-tongji-thesis
 ```
 
 #### 3. Download Fonts
@@ -120,3 +120,4 @@ We have learned a lot from the excellent open-source projects of top universitie
     'rizhonglin@$.%'.replace('$', 'epfl').replace('%', 'ch'),
 ]
 ```
+qq

@@ -24,7 +24,7 @@
 
 ### 在线 Web App
 
-请打开 [https://typst.app/universe/package/tongji-undergrad-thesis](https://typst.app/universe/package/tongji-undergrad-thesis) 并点击 `Create project in app` ，或在 Web App 中选择 `Start from a template`，再选择 `tongji-undergrad-thesis`。
+请打开 [https://typst.app/universe/package/paddling-tongji-thesis](https://typst.app/universe/package/paddling-tongji-thesis) 并点击 `Create project in app` ，或在 Web App 中选择 `Start from a template`，再选择 `paddling-tongji-thesis`。
 
 然后，请将 [https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts) 内的 **所有** 字体上传到 Typst Web App 内该项目的根目录。
 
@@ -37,7 +37,7 @@
 #### 2. 从模板初始化项目
 
 ```bash
-typst init @preview/tongji-undergrad-thesis
+typst init @preview/paddling-tongji-thesis
 ```
 
 #### 3. 下载字体

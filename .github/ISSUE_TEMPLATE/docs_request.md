@@ -1,6 +1,6 @@
 ---
 name: Docs 反馈
-about: 通过该 Issue 模板反馈目前 tongji-undergrad-thesis 文档的不足之处
+about: 通过该 Issue 模板反馈目前 tongji-undergrad-thesis-typst 文档的不足之处
 labels: 'type/docs'
 ---
 
@@ -9,11 +9,11 @@ labels: 'type/docs'
 <!--在你认为存在缺陷的部分打勾-->
 
 * 平台相关
-  * [ ] 在线平台：Overleaf
-  * [ ] 本地：MacOS / Windows / 各种 Linux 发行版
+  * [ ] 在线平台：Typst App
+  * [ ] 本地平台：Typst
 * 使用过程
   * [ ] 模版编译（编译配置、依赖安装等）
-  * [ ] 最佳实践（LaTeX 基础知识、模版使用教学、工作流等）
+  * [ ] 最佳实践（Typst 基础知识、模版使用教学、工作流等）
 * [ ] 不，我需要其他文档：_________
 
 ### 对文档的期望

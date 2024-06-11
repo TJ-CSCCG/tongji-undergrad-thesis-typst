@@ -1,6 +1,6 @@
 ---
 name: Feature 建议
-about: 通过该 Issue 模板反馈向 tongji-undergrad-thesis 提供需要新增的 feature 的具体信息
+about: 通过该 Issue 模板反馈向 tongji-undergrad-thesis-typst 提供需要新增的 feature 的具体信息
 labels: 'type/feature'
 ---
 

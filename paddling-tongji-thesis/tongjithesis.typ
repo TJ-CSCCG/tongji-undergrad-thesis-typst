@@ -1,4 +1,8 @@
-#import "../paddling-tongji-thesis/elements.typ": *
+#import "@preview/i-figured:0.2.2"
+#import "@preview/tablex:0.0.6": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/algo:0.3.3": algo, i, d, comment, code
+
+#import "elements.typ": *
 
 #set pagebreak(weak: true)
 
@@ -126,7 +130,7 @@
   pagebreak()
 
   make-abstract(
-    title: title-english, abstract: abstract-english, keywords: keywords-english, prompt: ("ABSTRACT", "Keywords: "), is-english: true,
+    title: title-english, abstract: abstract-english, keywords: keywords-english, prompt: ("ABSTRACT", "Key words: "), is-english: true,
   )
   pagebreak()
 

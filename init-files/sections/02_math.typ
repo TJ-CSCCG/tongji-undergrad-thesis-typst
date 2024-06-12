@@ -1,4 +1,4 @@
-#import "@preview/paddling-tongji-thesis:0.1.1": *
+#import "../../paddling-tongji-thesis/tongjithesis.typ": *
 
 = 数学 <math>
 

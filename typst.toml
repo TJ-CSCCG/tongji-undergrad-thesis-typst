@@ -1,5 +1,7 @@
 [package]
 name = "paddling-tongji-thesis"
+# 修改版本号、准备release时，一定不要忘了同步更新package_release.diff
+# Never forget to update package_release.diff when change the version and prepare to release
 version = "0.1.1"
 entrypoint = "paddling-tongji-thesis/tongjithesis.typ"
 authors = ["TJ-CSCCG <https://github.com/TJ-CSCCG>"]

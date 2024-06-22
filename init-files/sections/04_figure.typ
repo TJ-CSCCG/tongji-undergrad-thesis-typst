@@ -1,4 +1,4 @@
-#import "../../paddling-tongji-thesis/elements.typ": *
+#import "../../paddling-tongji-thesis/tongjithesis.typ": *
 
 #let example-image = "../figures/example-image.svg"
 

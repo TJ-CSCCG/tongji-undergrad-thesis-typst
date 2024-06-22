@@ -1,4 +1,4 @@
-#import "../../paddling-tongji-thesis/elements.typ": *
+#import "../../paddling-tongji-thesis/tongjithesis.typ": *
 
 #heading("谢辞", numbering: none)
 #empty-par()

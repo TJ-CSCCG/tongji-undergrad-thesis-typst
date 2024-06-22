@@ -5,7 +5,7 @@
 > [!CAUTION]
 > 由于 Typst 项目仍处于密集发展阶段，且对某些功能的支持不完善，因此本模板可能存在一些问题。如果您在使用过程中遇到了问题，欢迎提交 issue 或 PR，我们会尽力解决。
 >
-> 在此期间，欢迎大家使用[我们的 $\LaTeX$ 模板](https://github.com/TJ-CSCCG/tongji-undergrad-thesis)。
+> 在此期间，欢迎大家使用[我们的 LaTeX 模板](https://github.com/TJ-CSCCG/tongji-undergrad-thesis)。
 
 ## 样例展示
 
@@ -24,64 +24,62 @@
 
 ### 在线 Web App
 
-请打开 [https://typst.app/universe/package/tongji-undergrad-thesis](https://typst.app/universe/package/tongji-undergrad-thesis) 并点击 `Create project in app` ，或在 Web App 中选择 `Start from a template`，再选择 `tongji-undergrad-thesis`。
+#### 创建项目
 
-然后，请将 [https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts/fonts) 内的 **所有** 字体上传到 Typst Web App 内该项目的根目录。
+- 打开 Typst Universe 中的 [![svg of typst-tongjithesis](https://img.shields.io/badge/Typst-paddling--tongji--thesis-239dae)](https://www.overleaf.com/latex/templates/tongji-university-undergraduate-thesis-template/tfvdvyggqybn)
+并点击 `Create project in app`。
 
-### 本地 - 使用typst init
+- 或在 [Typst Web App](https://typst.app) 中选择 `Start from a template`，然后选择 `paddling-tongji-thesis`。
+
+#### 上传字体
+
+从[`fonts` 分支](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts)下载所有字体文件，上传到该项目的根目录。即可开始使用。
+
+### 本地使用
 
 #### 1. 安装 Typst
 
 参照 [Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) 官方文档安装 Typst。
 
-#### 2. 从模板初始化项目
+#### 2. 下载字体
+
+从[`fonts` 分支](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts)下载所有字体文件，并**安装到系统中**。
+
+#### 使用 `typst` 初始化
+
+##### 初始化项目
 
 ```bash
-typst init @preview/tongji-undergrad-thesis
+typst init @preview/paddling-tongji-thesis
 ```
 
-#### 3. 下载字体
-
-请到本仓库的 [`fonts`](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts) 分支下载字体文件，并将其安装到系统中。
-
-#### 4. 编译
-
-按照需求修改相关文件，然后执行以下命令以编译。
+##### 编译
 
 ```bash
 typst compile main.typ
 ```
 
-> [!TIP]
-> 若您发现字体无法正常显示，请将字体文件安装到系统中，再执行编译命令。
+#### 使用 `git clone` 初始化
 
-### 本地 - 使用Git Clone
-
-#### 1. 安装 Typst
-
-参照 [Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) 官方文档安装 Typst。
-
-#### 2. clone 本项目
+##### Git Clone 项目
 
 ```bash
 git clone https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git
 cd tongji-undergrad-thesis-typst
 ```
 
-#### 3. 下载字体
-
-请到本仓库的 [`fonts`](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/fonts) 分支下载字体文件，并将其放置在 `fonts` 文件夹中，或者将字体文件安装到系统中。
-
-#### 4. 编译
-
-按照需求修改`init-files`目录内的相关文件，然后执行以下命令以编译。
+##### 编译
 
 ```bash
-typst --font-path ./fonts compile init-files/main.typ --root . 
+typst compile init-files/main.typ --root .
 ```
 
 > [!TIP]
-> 若您发现字体无法正常显示，请将 `fonts` 文件夹中的字体文件安装到系统中，再执行编译命令。
+> 若你不想把项目使用的字体安装到系统中，可以在编译时指定字体路径，例如：
+>
+> ```bash
+> typst compile init-files/main.typ --root . --font-path {YOUR_FONT_PATH}
+> ```
 
 ## 如何为该项目贡献代码？
 
@@ -97,8 +95,8 @@ typst --font-path ./fonts compile init-files/main.typ --root .
 
 ## 有关突出贡献的说明
 
-* 该项目起源于 [FeO3](https://github.com/seashell11234455) 的初始版本项目 [tongji-undergrad-thesis-typst](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/lky)。
-* 后来 [RizhongLin](https://github.com/RizhongLin) 对模板进行了完善，使其更加符合同济大学本科生毕业设计论文的要求，并增加了针对 Typst 的基础教程。
+- 该项目起源于 [FeO3](https://github.com/seashell11234455) 的初始版本项目 [tongji-undergrad-thesis-typst](https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst/tree/lky)。
+- 后来 [RizhongLin](https://github.com/RizhongLin) 对模板进行了完善，使其更加符合同济大学本科生毕业设计论文的要求，并增加了针对 Typst 的基础教程。
 
 我们非常感谢以上贡献者的付出，他们的工作为更多同学提供了方便和帮助。
 
@@ -108,8 +106,8 @@ typst --font-path ./fonts compile init-files/main.typ --root .
 
 我们从顶尖高校的优秀开源项目中学到了很多：
 
-* [lucifer1004/pkuthss-typst](https://github.com/lucifer1004/pkuthss-typst)
-* [werifu/HUST-typst-template](https://github.com/werifu/HUST-typst-template)
+- [lucifer1004/pkuthss-typst](https://github.com/lucifer1004/pkuthss-typst)
+- [werifu/HUST-typst-template](https://github.com/werifu/HUST-typst-template)
 
 ## 联系方式
 
@@ -122,4 +120,4 @@ typst --font-path ./fonts compile init-files/main.typ --root .
 
 ### QQ 群
 
-* TJ-CSCCG 交流群：`1013806782`
+- TJ-CSCCG 交流群：`1013806782`

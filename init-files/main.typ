@@ -1,4 +1,4 @@
-#import "./tongjithesis.typ": *
+#import "../paddling-tongji-thesis/tongjithesis.typ": *
 
 #set pagebreak(weak: true)
 

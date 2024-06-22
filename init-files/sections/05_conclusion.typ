@@ -1,4 +1,4 @@
-#import "../../paddling-tongji-thesis/elements.typ": *
+#import "../../paddling-tongji-thesis/tongjithesis.typ": *
 
 = 总结与未来工作展望
 

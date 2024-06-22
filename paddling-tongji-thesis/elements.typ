@@ -1,7 +1,4 @@
 #import "utils.typ": *
-#import "@preview/i-figured:0.2.2"
-#import "@preview/tablex:0.0.6": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
-#import "@preview/algo:0.3.3": algo, i, d, comment, code
 
 #let draw-binding() = {
   place("|", dx: -1.6cm, dy: 2.3cm)

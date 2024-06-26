@@ -1,7 +1,3 @@
-#import "@preview/i-figured:0.2.2"
-#import "@preview/tablex:0.0.6": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
-#import "@preview/algo:0.3.3": algo, i, d, comment, code
-
 #import "elements.typ": *
 
 #set pagebreak(weak: true)
@@ -154,8 +150,4 @@
   counter(page).update(1)
 
   doc
-}
-
-#let make-bib(bib_dir: "bib/note.bib", full: false) = {
-  bibliography(bib_dir, full: full, style: "gb-7714-2015-numeric")
 }

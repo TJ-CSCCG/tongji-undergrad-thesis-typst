@@ -55,7 +55,7 @@
 #include "sections/05_conclusion.typ"
 #pagebreak()
 
-#make-bib()
+#bibliography("bib/note.bib", full: false, style: "gb-7714-2015-numeric")
 #pagebreak()
 
 #include "sections/acknowledgments.typ"

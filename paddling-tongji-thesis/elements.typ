@@ -1,3 +1,7 @@
+#import "@preview/i-figured:0.2.2"
+#import "@preview/tablex:0.0.6": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/algo:0.3.3": algo, i, d, comment, code
+
 #import "utils.typ": *
 
 #let draw-binding() = {

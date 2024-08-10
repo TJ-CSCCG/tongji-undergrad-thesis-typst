@@ -26,7 +26,7 @@
 
 #### 创建项目
 
-- 打开 Typst Universe 中的 [![svg of typst-tongjithesis](https://img.shields.io/badge/Typst-paddling--tongji--thesis-239dae)](https://www.overleaf.com/latex/templates/tongji-university-undergraduate-thesis-template/tfvdvyggqybn)
+- 打开 Typst Universe 中的 [![svg of typst-tongjithesis](https://img.shields.io/badge/Typst-paddling--tongji--thesis-239dae)](https://typst.app/universe/package/paddling-tongji-thesis)
 并点击 `Create project in app`。
 
 - 或在 [Typst Web App](https://typst.app) 中选择 `Start from a template`，然后选择 `paddling-tongji-thesis`。

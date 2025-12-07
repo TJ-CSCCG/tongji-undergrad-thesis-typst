@@ -88,8 +88,29 @@
     }
   } + empty-par()
 
-  show list: it => it + empty-par()
-  show enum: it => it + empty-par()
+  show list: it => {
+    for child in it.children [
+      #it.marker.at(0)
+      #h(0.5em)
+      #child.body
+      
+    ]
+  }
+  show enum: it => {
+    let index = 0
+    for child in it.children {
+      index = index + 1
+      if child.has("number") [
+        #child.number.
+      ] else [
+        #index.
+      ]
+      [
+        #child.body
+        
+      ]
+    }
+  }
   show figure: it => v(0.5em) + it + v(0.5em) + empty-par()
   show figure: set block(breakable: true)
   show table: it => it + empty-par()

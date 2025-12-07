@@ -41,7 +41,7 @@
 }
 
 #let empty-par() = {
-  v(-1em)
+  v(-1.2em)
   box()
 }
 

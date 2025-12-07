@@ -45,9 +45,9 @@
   box()
 }
 
-#let list-empty-par() = {
-  v(-0.9em)
-  box()
+#let list-after-fix() = {
+  v(-1.2em)
+  text(baseline: -0.15em, box())
 }
 
 #let make-cover(cover) = align(center)[

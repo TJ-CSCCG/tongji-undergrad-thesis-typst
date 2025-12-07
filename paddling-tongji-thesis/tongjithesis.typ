@@ -88,8 +88,8 @@
     }
   } + empty-par()
 
-  show list: it => it + list-empty-par()
-  show enum: it => it + list-empty-par()
+  show list: it => it + list-after-fix()
+  show enum: it => it + list-after-fix()
   show figure: it => v(0.5em) + it + v(0.5em) + empty-par()
   show figure: set block(breakable: true)
   show table: it => it + empty-par()

@@ -1,0 +1,44 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - fix-ci
+  pull_request:
+    branches:
+      - main
+      - dev
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.repository == 'TJ-CSCCG/tongji-undergrad-thesis-typst'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Download fonts from fonts branch
+        run: |
+          git fetch origin fonts
+          git checkout FETCH_HEAD -- fonts
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Compile thesis
+        run: |
+          typst compile init-files/main.typ thesis.pdf --root . --font-path ./fonts
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v5
+        with:
+          name: thesis-pdf
+          path: thesis.pdf
+          retention-days: 30

@@ -19,7 +19,7 @@
   pagebreak()
 
   set par(justify: true, first-line-indent: 2em, leading: 0.9em)
-  show par: set block(spacing: 0.9em)
+  set par(spacing: 0.9em)
   set math.equation(numbering: none) // not implemented yet: (1.1)
   show strong: it => text(font: font-family.hei, weight: "bold", it.body)
   show emph: it => text(font: font-family.kai, style: "italic", it.body)
@@ -38,57 +38,55 @@
     "abcdefghijklmnopqrstuvwxyz".at(nums.pos().at(-1) - 1) + ". "
   })
 
-  show heading: it => locate(
-    loc => {
-      if it.level == 1 {
-        set align(center)
-        set text(font: font-family.hei, size: font-size.at("4"), weight: "bold")
-        if it.numbering != none {
-          numbering(it.numbering, ..counter(heading).at(loc))
-          h(1em)
-          it.body
-        } else {
-          it
-        }
-        v(1.5em)
-      } else if it.level == 2 {
-        set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
-        v(0.5em)
-        if it.numbering != none {
-          h(-2em)
-          numbering(it.numbering, ..counter(heading).at(loc))
-          h(1em)
-          it.body
-        } else {
-          it
-        }
-        v(1em)
-      } else if it.level == 3 {
-        set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
-        v(0.5em)
-        if it.numbering != none {
-          numbering(it.numbering, ..counter(heading).at(loc))
-          h(1em)
-          it.body
-        } else {
-          it
-        }
-        v(1em)
-      } else if it.level == 4 {
-        set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
-        v(-0.5em)
-        grid(columns: (2em, 1fr), [], it)
-        v(0.5em)
-      } else if it.level == 5 {
-        set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
-        v(-0.5em)
-        grid(columns: (2em, 1fr), [], it)
-        v(0.5em)
+  show heading: it => context {
+    if it.level == 1 {
+      set align(center)
+      set text(font: font-family.hei, size: font-size.at("4"), weight: "bold")
+      if it.numbering != none {
+        numbering(it.numbering, ..counter(heading).get())
+        h(1em)
+        it.body
       } else {
         it
       }
-    },
-  ) + empty-par()
+      v(1.5em)
+    } else if it.level == 2 {
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
+      v(0.5em)
+      if it.numbering != none {
+        h(-2em)
+        numbering(it.numbering, ..counter(heading).get())
+        h(1em)
+        it.body
+      } else {
+        it
+      }
+      v(1em)
+    } else if it.level == 3 {
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
+      v(0.5em)
+      if it.numbering != none {
+        numbering(it.numbering, ..counter(heading).get())
+        h(1em)
+        it.body
+      } else {
+        it
+      }
+      v(1em)
+    } else if it.level == 4 {
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
+      v(-0.5em)
+      grid(columns: (2em, 1fr), [], it)
+      v(0.5em)
+    } else if it.level == 5 {
+      set text(font: font-family.hei, size: font-size.at("5"), weight: "bold")
+      v(-0.5em)
+      grid(columns: (2em, 1fr), [], it)
+      v(0.5em)
+    } else {
+      it
+    }
+  } + empty-par()
 
   show list: it => it + empty-par()
   show enum: it => it + empty-par()
@@ -112,11 +110,11 @@
       v(-0.5em)
       line(length: 100%, stroke: 1.8pt)
       draw-binding()
-    }, header-ascent: 20%, footer: locate(loc => {
+    }, header-ascent: 20%, footer: context {
       set align(center)
       set text(font: font-family.song, size: font-size.at("-4"))
-      numbering("I", counter(page).at(loc).first())
-    }),
+      numbering("I", counter(page).get().first())
+    },
   )
   counter(page).update(1)
 
@@ -133,20 +131,20 @@
   make-outline()
   pagebreak()
 
-  set page(footer: locate(loc => {
+  set page(footer: context {
     line(stroke: 1.8pt, length: 100%)
     set align(right)
     set text(font: font-family.song, size: font-size.at("-4"))
     v(-0.6em)
     [
       共#h(1em)
-      #counter(page).final(loc).at(0)#h(1em)
+      #counter(page).final().at(0)#h(1em)
       页#h(1em)
       第#h(1em)
       #counter(page).display()
       #h(1em)页
     ]
-  }))
+  })
   counter(page).update(1)
 
   doc

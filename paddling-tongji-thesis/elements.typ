@@ -1,6 +1,6 @@
 #import "@preview/i-figured:0.2.2"
-#import "@preview/tablex:0.0.6": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
-#import "@preview/algo:0.3.3": algo, i, d, comment, code
+#import "@preview/tablex:0.0.9": cellx, tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "@preview/algo:0.3.5": algo, i, d, comment, code
 
 #import "utils.typ": *
 
@@ -108,47 +108,45 @@
   // outline(title: "目录", depth: 3)
   heading(title, numbering: none, outlined: false)
   set par(first-line-indent: 0pt, leading: 0.9em)
-  locate(
-    it => {
-      let elements = query(heading.where(outlined: true), it)
+  context {
+    let elements = query(heading.where(outlined: true))
 
-      for el in elements {
-        // Skip headings that are too deep
-        if depth != none and el.level > depth { continue }
+    for el in elements {
+      // Skip headings that are too deep
+      if depth != none and el.level > depth { continue }
 
-        let el_number = if el.numbering != none {
-          numbering(el.numbering, ..counter(heading).at(el.location()))
-          h(0.5em)
-        }
+      let el_number = if el.numbering != none {
+        numbering(el.numbering, ..counter(heading).at(el.location()))
+        h(0.5em)
+      }
 
-        let line = {
-          if indent {
-            let indent-width = if el.level == 1 {
-              0pt
-            } else if el.level == 2 {
-              1em
-            } else if el.level == 3 {
-              4em
-            } else {
-              0pt
-            }
-
-            h(indent-width)
+      let line = {
+        if indent {
+          let indent-width = if el.level == 1 {
+            0pt
+          } else if el.level == 2 {
+            1em
+          } else if el.level == 3 {
+            4em
+          } else {
+            0pt
           }
 
-          link(el.location(), el_number)
-          link(el.location(), el.body)
-          box(width: 1fr, h(0.25em) + box(width: 1fr, repeat[·#h(1pt)]) + h(0.25em))
-          link(el.location(),str(counter(page).at(el.location()).first()))
-
-          linebreak()
+          h(indent-width)
         }
 
-        // link(el.location(), line)
-        line
+        link(el.location(), el_number)
+        link(el.location(), el.body)
+        box(width: 1fr, h(0.25em) + box(width: 1fr, repeat[·#h(1pt)]) + h(0.25em))
+        link(el.location(),str(counter(page).at(el.location()).first()))
+
+        linebreak()
       }
-    },
-  )
+
+      // link(el.location(), line)
+      line
+    }
+  }
 }
 
 #let heavyrulewidth = .08em

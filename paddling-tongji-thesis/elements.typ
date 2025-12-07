@@ -41,8 +41,8 @@
 }
 
 #let empty-par() = {
-  v(-1.2em)
-  []
+  v(-1em)
+  box()
 }
 
 #let make-cover(cover) = align(center)[

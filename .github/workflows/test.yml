@@ -17,16 +17,15 @@ concurrency:
 
 jobs:
   build:
-    if: github.repository == 'TJ-CSCCG/tongji-undergrad-thesis-typst'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Download fonts from fonts branch
+      - name: Download fonts from upstream
         run: |
-          git fetch origin fonts
+          git fetch https://github.com/TJ-CSCCG/tongji-undergrad-thesis-typst.git fonts
           git checkout FETCH_HEAD -- fonts
 
       - name: Setup Typst

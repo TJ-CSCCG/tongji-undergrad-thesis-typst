@@ -131,7 +131,7 @@
   make-outline()
   pagebreak()
 
-  set page(footer: context {
+  set page(numbering: "1", footer: context {
     line(stroke: 1.8pt, length: 100%)
     set align(right)
     set text(font: font-family.song, size: font-size.at("-4"))

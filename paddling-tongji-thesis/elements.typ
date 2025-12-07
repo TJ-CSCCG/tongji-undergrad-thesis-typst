@@ -40,14 +40,19 @@
   place("|", dx: -1.6cm, dy: 21.5cm)
 }
 
+// Standard vertical spacing adjustment for empty paragraphs
+#let vertical-adjustment = -1.2em
+// Baseline adjustment for Chinese text after lists (inspired by ctyp package)
+#let list-baseline-adjustment = -0.15em
+
 #let empty-par() = {
-  v(-1.2em)
+  v(vertical-adjustment)
   box()
 }
 
 #let list-after-fix() = {
-  v(-1.2em)
-  text(baseline: -0.15em, box())
+  v(vertical-adjustment)
+  text(baseline: list-baseline-adjustment, box())
 }
 
 #let make-cover(cover) = align(center)[

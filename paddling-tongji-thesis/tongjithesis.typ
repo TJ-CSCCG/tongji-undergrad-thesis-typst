@@ -90,21 +90,20 @@
 
   show list: it => {
     for child in it.children [
-      #it.marker.at(0)
+      #child.marker
       #h(0.5em)
       #child.body
       
     ]
   }
   show enum: it => {
-    let index = 0
-    for child in it.children {
-      index = index + 1
+    for (index, child) in it.children.enumerate() {
       if child.has("number") [
         #child.number.
       ] else [
-        #index.
+        #(index + 1).
       ]
+      h(0.5em)
       [
         #child.body
         

@@ -45,6 +45,11 @@
   box()
 }
 
+#let list-empty-par() = {
+  v(-0.9em)
+  box()
+}
+
 #let make-cover(cover) = align(center)[
   #image("figures/tongji.svg", height: 2.25cm)
   #text(
